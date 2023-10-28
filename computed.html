@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computed</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="app">
+    <h2>Computed</h2>
+    <p>{{ reversedMessage }}</p>
+    <p>{{ reversedMessageMethod() }}</p>
+
+    <p>base price: <input type="text" v-model="basePrice"></p>
+    <p>tax included price: <input type="text" v-model="taxIncludedPrice"></p>
+    <h2>ex</h2>
+    <h3>computed</h3>
+    <ol>
+      <li>{{ computedNumber }}</li>
+      <li>{{ computedNumber }}</li>
+      <li>{{ computedNumber }}</li>
+    </ol>
+    <h3>methods</h3>
+    <ol>
+      <li>{{ methodsNumber() }}</li>
+      <li>{{ methodsNumber() }}</li>
+      <li>{{ methodsNumber() }}</li>
+    </ol>
+    <p>{{ message }}</p>
+    <p><input type="text" v-model="message"></p>
+    <h2>ex2</h2>
+    <p><input type="text" v-model="km"></p>
+    <p><input type="text" v-model="m"></p>
+  </div>
+  <footer id="footer" class="footer">
+    <ul v-for="link in links">
+      <li v-cloak><a :href="link.href">{{ link.label }}</a></li>
+    </ul>
+  </footer>
+  <script src="https://unpkg.com/vue@3.1.5"></script>
+  <script src="js/computed.js"></script>
+  <script src="js/common.js"></script>
+</body>
+</html>

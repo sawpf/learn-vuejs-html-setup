@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="app">
+    <h2>フォーム入力バインディング</h2>
+    <p>{{ message }}</p>
+    <input type="text" v-model="message"><br>
+    <textarea v-model="message"></textarea><br>
+    <label for="checkbox">{{ checked }}</label>
+    <input type="checkbox" id="checkbox" v-model="checked"><br>
+    <label for="red">Red</label>
+    <input type="checkbox" id="red" value="Red" v-model="colors">
+    <label for="green">Green</label>
+    <input type="checkbox" id="green" value="Green" v-model="colors">
+    <label for="blue">Blue</label>
+    <input type="checkbox" id="blue" value="Blue" v-model="colors"><br>
+    <input type="radio" id="redR" value="Red" v-model="color">
+    <label for="redR">Red</label>
+    <input type="radio" id="greenR" value="Green" v-model="color">
+    <label for="greenR">Green</label>
+    <input type="radio" id="blueR" value="Blue" v-model="color">
+    <label for="blueR">Blue</label><br>
+    <select v-model="selected">
+      <option disabled value=""></option>Please select one</option>
+      <option>Red</option>
+      <option>Green</option>
+      <option>Blue</option>
+    </select>
+    <select v-model="selectedArray" multiple>
+      <option>Red</option>
+      <option>Green</option>
+      <option>Blue</option>
+    </select>
+    <p>{{ selected }}</p>
+    <p>{{ selectedArray }}</p>
+    <input type="text" v-model.lazy="lazy">
+    <p>lazy: {{ lazy }}</p>
+    <input type="text" v-model.trim="trim">
+    <p>trim: {{ trim }}</p>
+    <input type="text" v-model.number="number">
+    <p>number: {{ number + 10 }}</p>
+    <pre>{{ $data }}</pre>
+  </div>
+  <footer id="footer" class="footer">
+    <ul v-for="link in links">
+      <li v-cloak><a :href="link.href">{{ link.label }}</a></li>
+    </ul>
+  </footer>
+  <script src="https://unpkg.com/vue@3.1.5"></script>
+  <script src="js/form.js"></script>
+  <script src="js/common.js"></script>
+</body>
+</html>

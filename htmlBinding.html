@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="app">
+    <h2>クラスとスタイルのバインディング</h2>
+    <p>Hello <span class="" :class="[bgGrayClass, hasError ? hasError : classObject]">Vue.js</span></p>
+    <button @click="toggleLarge">large toggle</button>
+    <button @click="toggleError">hasError toggle</button>
+    <p>{{ isLarge }}</p>
+    <p>Hello <span :class="classObject">Vue.js!</span></p>
+  </div>
+  <footer id="footer" class="footer">
+    <ul v-for="link in links">
+      <li v-cloak><a :href="link.href">{{ link.label }}</a></li>
+    </ul>
+  </footer>
+  <script src="https://unpkg.com/vue@3.1.5"></script>
+  <script src="js/htmlBinding.js"></script>
+  <script src="js/common.js"></script>
+</body>
+</html>

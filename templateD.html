@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="app">
+    <h2>Template Directive</h2>
+    <p v-once>{{ message }}</p>
+    <button v-on:click="clickHandler">Click!</button>
+    <p v-pre>{{ message }}</p>
+    <p v-html="message2">サーバーサイドから取得したHTMLを描画 - XSS脆弱性の可能性</p>
+    <p v-cloak>{{ message }}</p>
+
+    <h2>v-text</h2>
+    <p v-text="message"></p>
+
+    <p>{{ str }}</p>
+    <p>{{ num + 1 }}</p>
+    <p>{{ str.split('').reverse().join('') }}</p>
+    <p>{{ boo ? 'YES' : 'NO' }}</p>
+    <p>{{ boo && 'YES' }}</p>
+  </div>
+  <footer id="footer" class="footer">
+    <ul v-for="link in links">
+      <li v-cloak><a :href="link.href">{{ link.label }}</a></li>
+    </ul>
+  </footer>
+  <script src="https://unpkg.com/vue@3.1.5"></script>
+  <script src="js/template.js"></script>
+  <script src="js/common.js"></script>
+</body>
+</html>

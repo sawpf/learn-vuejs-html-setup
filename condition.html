@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="app">
+    <h2>条件付レンダリング</h2>
+    <p v-if="toggle">YES</p>
+    <p v-else="toggle">No</p>
+    <button @click="toggleAction">toggle</button>
+    <p v-if="color === 'red'">Stop</p>
+    <p v-else-if="color === 'yellow'">Caution</p>
+    <p v-else-if="color === 'blue'">Go</p>
+    <p v-else>Not red/yellow/blue</p>
+    <p v-show="toggle">toggggg</p>
+  </div>
+  <footer id="footer" class="footer">
+    <ul v-for="link in links">
+      <li v-cloak><a :href="link.href">{{ link.label }}</a></li>
+    </ul>
+  </footer>
+  <script src="https://unpkg.com/vue@3.1.5"></script>
+  <script src="js/condition.js"></script>
+  <script src="js/common.js"></script>
+</body>
+</html>
